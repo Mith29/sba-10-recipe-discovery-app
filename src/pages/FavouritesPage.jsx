@@ -5,13 +5,13 @@ import useFetch from "../hooks/useFetch";
 import Spinner from "../components/Spinner";
 import ErrorMessage from "../components/ErrorMessage";
 
+
 function FavouritesPage() {
-  const { favorites} =
-    useContext(FavouritesContext);
+  const { favorites} = useContext(FavouritesContext);
 
   if (favorites.length === 0)
     return 
-      <p>No favourites added yet! Browse and add your favourite recipe!</p>
+      <p>No favourites added yet! Browse and add your favourite recipe!</p>;
 
 
   return (
