@@ -21,19 +21,24 @@ const { data, loading, error } = useFetch(
   if(error) return <ErrorMessage error={error}/>
 
     return(
-        <>
-      <h2>{strCategory} Recipes</h2>
-    
-    <ul>
-        {meals &&
-          meals?.map((item) => (
-            <Link key={item.idMeal} to={"/recipe/" + item.idMeal} >
-              <li>{item.strMeal}</li>
-            </Link>
-          ))}
-      </ul>
-
-        </>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full max-w-6xl px-6 pb-10">
+  {meals?.map((item) => (
+    <Link
+      key={item.idMeal}
+      to={"/recipe/" + item.idMeal}
+      className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition"
+    >
+      <img
+        src={item.strMealThumb}
+        alt={item.strMeal}
+        className="w-full h-48 object-cover"
+      />
+      <h3 className="p-3 font-semibold text-center">
+        {item.strMeal}
+      </h3>
+    </Link>
+  ))}
+</div>
     )
 }
 export default CategoryPage;

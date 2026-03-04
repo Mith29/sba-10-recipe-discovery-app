@@ -18,10 +18,10 @@ function HomePage() {
     if(loading) return <Spinner/>
   if(error) return <ErrorMessage error={error}/>
   return (
-    <>
-      <h1>Recipe Category List</h1>
+    <div className="flex flex-col items-center">
+      <h1 className="text-2xl font-bold p-10">Recipe Category List</h1>
      
-      <ul>
+      <ul className="underline text-xl text-blue-500 list-disc">
         {category &&
           category?.map((item) => (
             <Link key={item.idCategory} to={"/category/" + item.strCategory} >
@@ -29,7 +29,7 @@ function HomePage() {
             </Link>
           ))}
       </ul>
-    </>
+    </div>
   );
 }
 export default HomePage;
