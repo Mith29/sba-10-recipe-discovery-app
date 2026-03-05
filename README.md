@@ -14,9 +14,9 @@
 
    * handling of:
 
-          * Loading states (Spinner component)
+     * Loading states (Spinner component)
 
-          * Error states (ErrorMessage component)
+     * Error states (ErrorMessage component)
 
    * Data fetched dynamically from TheMealDB API
 
