@@ -17,19 +17,41 @@ function HomePage() {
 
     if(loading) return <Spinner/>
   if(error) return <ErrorMessage error={error}/>
+ 
   return (
-    <div className="flex flex-col items-center bg-teal-50 h-screen">
-      <h1 className="text-2xl font-bold p-10">Recipe Category List</h1>
-     
-      <ul className="underline text-xl text-blue-500 list-disc">
+  <div
+    className="min-h-screen flex flex-col md:flex-row"
+    style={{
+      backgroundImage: "url('/src/assets/background.avif')",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+    }}
+  >
+    {/* Left Side Content (Responsive) */}
+    <div className="w-full md:w-1/2 p-6 md:p-10">
+      <h1 className="text-3xl font-bold text-white mb-6">
+        Recipe Categories
+      </h1>
+
+      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {category &&
-          category?.map((item) => (
-            <Link key={item.idCategory} to={"/category/" + item.strCategory} >
-              <li>{item.strCategory}</li>
+          category.map((item) => (
+            <Link
+              key={item.idCategory}
+              to={"/category/" + item.strCategory}
+              className="block"
+            >
+              <li className="bg-white px-6 py-4 rounded-xl shadow-lg text-mauve-600 text-lg font-medium hover:bg-gray-100 transition">
+                {item.strCategory}
+              </li>
             </Link>
           ))}
       </ul>
     </div>
-  );
+
+    {/* Right Side Empty Space (Hidden on Mobile) */}
+    <div className="hidden md:block w-1/2"></div>
+  </div>
+);
 }
 export default HomePage;

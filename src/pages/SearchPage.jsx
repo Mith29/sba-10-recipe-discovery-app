@@ -32,7 +32,7 @@ function SearchPage() {
       </div>
     );
   return (
-    <div className="bg-blue-50 min-h-screen p-6">
+    <div className="bg-mauve-100 min-h-screen p-6">
       {/* Page Title */}
       <h1 className="text-2xl font-bold mb-6 text-center">
         Search Results for "{query}"

@@ -10,14 +10,14 @@ function FavouritesPage() {
   const { favorites } = useContext(FavouritesContext);
   if (favorites.length === 0)
     return (
-      <div className="flex justify-center items-center h-60">
+      <div className="flex justify-center items-center h-60 ">
         <p className="text-gray-600 text-lg text-center">
           No Favorites Yet! Browse and add your favorite recipes 
         </p>
       </div>
     );
   return (
-    <div className="p-6">
+    <div className="p-6 bg-mauve-100">
       <h1 className="text-2xl font-bold mb-6 text-center">
         Favorite Recipes
       </h1>

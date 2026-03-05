@@ -20,7 +20,7 @@ function CategoryPage() {
   if (error) return <ErrorMessage error={error} />;
 
   return (
-    <div className="bg-teal-50">
+    <div className="bg-mauve-100">
       {" "}
       <h2 className="text-3xl font-bold p-4 text-center">
         {strCategory} Recipes

@@ -33,70 +33,74 @@ function RecipeDetailPage() {
     );
   if (error) return <ErrorMessage error={error} />;
   return (
-    <>
-      {meal && (
-        <div className="bg-blue-50 min-h-screen p-6">
+  <>
+    {meal && (
+      <div className="min-h-screen py-10 px-4">
+        
+        {/* Header Card */}
+        <div className="max-w-6xl mx-auto bg-white rounded-xl shadow-md p-6 flex justify-between items-center">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-800">
+            {meal.strMeal}
+          </h2>
+
+          <button
+            onClick={() =>
+              isFavorite(meal.idMeal)
+                ? removeFavorite(meal.idMeal)
+                : addFavorite(meal.idMeal)
+            }
+            className="p-2"
+          >
+            {isFavorite(meal.idMeal) ? (
+              <SolidHeart className="w-8 h-8 text-red-500" />
+            ) : (
+              <OutlineHeart className="w-8 h-8 text-gray-400 hover:text-red-500" />
+            )}
+          </button>
+        </div>
+
+        {/* Main Content */}
+        <div className="max-w-6xl mx-auto mt-6 grid gap-8 md:grid-cols-2">
           
-          {/* Header */}
-          <div className="flex justify-between items-center max-w-6xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-bold">
-              {meal.strMeal}
-            </h2>
-            <button
-              onClick={() =>
-                isFavorite(meal.idMeal)
-                  ? removeFavorite(meal.idMeal)
-                  : addFavorite(meal.idMeal)
-              }
-              className="p-2 transition"
-            >
-              {isFavorite(meal.idMeal) ? (
-                <SolidHeart className="w-8 h-8 text-red-500" />
-              ) : (
-                <OutlineHeart className="w-8 h-8 text-gray-400 hover:text-red-500" />
-              )}
-            </button>
+          {/* Image Section */}
+          <div className="bg-white p-4 rounded-xl shadow-md">
+            <img
+              className="w-full rounded-lg"
+              src={meal.strMealThumb}
+              alt={meal.strMeal}
+            />
           </div>
-          {/* Main Content Grid */}
-          <div className="max-w-6xl mx-auto mt-8 grid gap-10 md:grid-cols-2">
-            
-            {/* Image */}
-            <div>
-              <img
-                className="w-full rounded-2xl shadow-lg"
-                src={meal.strMealThumb}
-                alt={meal.strMeal}
-              />
-            </div>
-            {/* Ingredients */}
-            <div>
-              <h3 className="text-xl font-semibold mb-4">
-                Ingredients
-              </h3>
-              <ul className="space-y-2 text-gray-700">
-                {ingredients.map((item) => (
-                  <li
-                    key={item}
-                    className="bg-white p-2 rounded-md shadow-sm"
-                  >
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-          {/* Instructions Section */}
-          <div className="max-w-4xl mx-auto mt-12">
-            <h3 className="text-xl font-semibold mb-4">
-              Instructions
+
+          {/* Ingredients */}
+          <div className="bg-white p-4 rounded-xl shadow-md">
+            <h3 className="text-xl font-semibold mb-4 text-gray-800">
+              Ingredients
             </h3>
-            <p className="text-gray-700 leading-relaxed whitespace-pre-line">
-              {meal.strInstructions}
-            </p>
+            <ul className="space-y-2">
+              {ingredients.map((item) => (
+                <li
+                  key={item}
+                  className="bg-gray-50 p-2 rounded-md text-gray-700"
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
-      )}
-    </>
-  );
+
+        {/* Instructions */}
+        <div className="max-w-4xl mx-auto mt-10 bg-white p-6 rounded-xl shadow-md">
+          <h3 className="text-xl font-semibold mb-4 text-gray-800">
+            Instructions
+          </h3>
+          <p className="text-gray-700 leading-relaxed whitespace-pre-line">
+            {meal.strInstructions}
+          </p>
+        </div>
+      </div>
+    )}
+  </>
+);
 }
 export default RecipeDetailPage;
