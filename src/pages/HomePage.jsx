@@ -27,7 +27,7 @@ function HomePage() {
       backgroundPosition: "center",
     }}
   >
-    {/* Left Side Content (Responsive) */}
+   
     <div className="w-full md:w-1/2 p-6 md:p-10">
       <h1 className="text-3xl font-bold text-white mb-6">
         Recipe Categories
@@ -49,7 +49,7 @@ function HomePage() {
       </ul>
     </div>
 
-    {/* Right Side Empty Space (Hidden on Mobile) */}
+   
     <div className="hidden md:block w-1/2"></div>
   </div>
 );
