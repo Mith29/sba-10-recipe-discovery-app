@@ -56,7 +56,7 @@ A custom hook that:
 
 * FavoritesContext:
 
-      Manages favorite recipes globally across the application.
+  Manages favorite recipes globally across the application.
 
 Provides:
 
@@ -75,7 +75,7 @@ Favorites are persisted using the useLocalStorage hook.
 
 ### Application Pages & Routing
 
-    Built with React Router.
+ Built with React Router.
 
 #### Home Page (/)
 
@@ -101,45 +101,42 @@ Favorites are persisted using the useLocalStorage hook.
 
   * Displays:
 
-  * Recipe image
+    * Recipe image
 
-  * Ingredients
+    * Ingredients
 
-  * Instructions
+    * Instructions
 
   * Includes:
 
-      * “Add to Favorites” / “Remove from Favorites” button
+    * “Add to Favorites” / “Remove from Favorites” button
 
 #### Favorites Page (/favorites)
 
   * Displays all saved favorite recipes
 
-If empty → shows helpful message prompting user to explore
+  * If empty → shows helpful message prompting user to explore
 
-🔎 Search Results Page (/search?query=recipeName)
+#### Search Results Page (/search?query=recipeName)
 
-Search bar in shared Navbar
+  * Search bar in shared Navbar
 
-Searches recipes by name
+  * Searches recipes by name
 
-Displays matching results dynamically
+  * Displays matching results dynamically
 
-🧩 Reusable Components
+#### Reusable Components
 
-Navbar
+  * Navbar
 
-RecipeCard
+  * RecipeCard
 
-Spinner
+  * Spinner
 
-ErrorMessage
+  * ErrorMessage
 
-Layout components
 
-The application is fully responsive and styled using modern CSS practices (Tailwind CSS / CSS Modules / CSS-in-JS depending on implementation).
-
-🌐 API Used
+#### API Used
 
 This project uses the free public API:
 
@@ -149,80 +146,15 @@ Base URL:
 
 https://www.themealdb.com/api/json/v1/1/
 
-Example Endpoints:
 
-List all categories
 
-/categories.php
+### Installation
 
-Filter by category
-
-/filter.php?c=Seafood
-
-Lookup recipe details by ID
-
-/lookup.php?i=52772
-
-Search recipe by name
-
-/search.php?s=Arrabiata
-🛠️ Tech Stack
-
-React
-
-React Router
-
-Context API
-
-Custom Hooks
-
-LocalStorage
-
-TheMealDB API
-
-📦 Installation
-git clone <your-repo-url>
-cd recipe-discovery-app
-npm install
-npm run dev
-📌 Learning Objectives
-
-This project demonstrates:
-
-Custom Hook creation
-
-API data handling
-
-Global state management with Context
-
-Dynamic routing
-
-Persistent storage with localStorage
-
-Reusable component architecture
-
-Responsive UI design
-
-✨ Future Improvements
-
-Pagination
-
-Recipe filtering (Area, Ingredient)
-
-Dark mode
-
-Animations
-
-Unit testing
-
-If you'd like, I can also:
-
-Make a shorter student-friendly version
-
-Make a more professional portfolio-ready version
-
-Add screenshots section formatting
-
-Format it specifically for GitHub markdown styling**
-
-Just tell me 👌
+  * git clone:
+       <https://github.com/Mith29/sba-10-recipe-discovery-app>
+       
+       cd recipe-discovery-app
+       
+       npm install
+      
+       npm run dev
