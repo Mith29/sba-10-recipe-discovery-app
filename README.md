@@ -136,9 +136,7 @@ Built with React Router.
 
 #### API Used
 
-This project uses the free public API:
-
-🥗 TheMealDB
+This project uses the free public API: TheMealDB
 
 Base URL:
 
