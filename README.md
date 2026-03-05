@@ -1,4 +1,4 @@
-                           Recipe Discovery App
+   #  Recipe Discovery App
 
 
 
@@ -56,7 +56,7 @@ A custom hook that:
 
 * FavoritesContext:
 
-  Manages favorite recipes globally across the application.
+Manages favorite recipes globally across the application.
 
 Provides:
 
@@ -75,7 +75,7 @@ Favorites are persisted using the useLocalStorage hook.
 
 ### Application Pages & Routing
 
- Built with React Router.
+Built with React Router.
 
 #### Home Page (/)
 
@@ -107,9 +107,7 @@ Favorites are persisted using the useLocalStorage hook.
 
     * Instructions
 
-  * Includes:
-
-    * “Add to Favorites” / “Remove from Favorites” button
+  * Includes: “Add to Favorites” / “Remove from Favorites” button
 
 #### Favorites Page (/favorites)
 
@@ -150,7 +148,7 @@ https://www.themealdb.com/api/json/v1/1/
 
 ### Installation
 
-  * git clone:
+   git clone:
        <https://github.com/Mith29/sba-10-recipe-discovery-app>
        
        cd recipe-discovery-app
