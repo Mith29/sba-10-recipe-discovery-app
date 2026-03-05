@@ -18,7 +18,7 @@ function HomePage() {
     if(loading) return <Spinner/>
   if(error) return <ErrorMessage error={error}/>
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center bg-teal-50 h-screen">
       <h1 className="text-2xl font-bold p-10">Recipe Category List</h1>
      
       <ul className="underline text-xl text-blue-500 list-disc">

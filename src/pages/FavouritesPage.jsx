@@ -7,34 +7,43 @@ import ErrorMessage from "../components/ErrorMessage";
 
 
 function FavouritesPage() {
-  const { favorites} = useContext(FavouritesContext);
-
+  const { favorites } = useContext(FavouritesContext);
   if (favorites.length === 0)
-    return 
-      <p>No favourites added yet! Browse and add your favourite recipe!</p>;
-
-
+    return (
+      <div className="flex justify-center items-center h-60">
+        <p className="text-gray-600 text-lg text-center">
+          No Favorites Yet! Browse and add your favorite recipes 
+        </p>
+      </div>
+    );
   return (
-    <>
-      {favorites.map((id) => (
-        <FavouriteRecipe key={id} id={id} />
-      ))}
-    </>
+    <div className="p-6">
+      <h1 className="text-2xl font-bold mb-6 text-center">
+        Favorite Recipes
+      </h1>
+      {/* Responsive Grid */}
+      <div
+        className="grid gap-6 
+                   grid-cols-1 
+                   sm:grid-cols-2 
+                   md:grid-cols-3 
+                   lg:grid-cols-4"
+      >
+        {favorites.map((id) => (
+          <FavoritesRecipe key={id} id={id} />
+        ))}
+      </div>
+    </div>
   );
 }
 export default FavouritesPage;
-
-function FavouriteRecipe({ id }) {
-  const { data,error, loading } = useFetch(
-    "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + id,
+function FavoritesRecipe({ id }) {
+  const { data, loading, error } = useFetch(
+    "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + id
   );
-  if (!data?.meals) return null;
-  const meal = data.meals[0];
-
   if (loading) return <Spinner />;
   if (error) return <ErrorMessage error={error} />;
-  return (<>
-  {<RecipeCard key ={meal.idMeal} meal={meal} />} 
-  </>
-  );
+  if (!data?.meals) return null;
+  const meal = data.meals[0];
+  return <RecipeCard meal={meal} />;
 }
