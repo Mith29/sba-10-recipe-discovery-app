@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
 import Spinner from "../components/Spinner";
 import ErrorMessage from "../components/ErrorMessage";
-
+import bg from "../assets/background.avif"
 function HomePage() {
   const { data, loading, error } = useFetch(
     "https://www.themealdb.com/api/json/v1/1/categories.php",
@@ -22,7 +22,7 @@ function HomePage() {
   <div
     className="min-h-screen flex flex-col md:flex-row"
     style={{
-      backgroundImage: "url('/src/assets/background.avif')",
+      backgroundImage: `url(${bg})`,
       backgroundSize: "cover",
       backgroundPosition: "center",
     }}
